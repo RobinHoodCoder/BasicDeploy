@@ -1,0 +1,64 @@
+body {
+  background: @bodyBackground;
+  min-width: 326px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  &.overlay {
+
+  }
+}
+
+.left-floated {
+  float: left;
+}
+
+.align-marger {
+  margin-bottom: 50px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: @mainColor;
+}
+
+.grid-container *&.nomargin, *.nomargin {
+  grid-gap: 0;
+  margin: 0;
+  grid-column-gap: 0 !important;
+}
+
+.right-floated {
+  float: right;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.div {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+
+    text-decoration: none;
+  }
+}
+
+.cleared {
+  clear: both;
+}
+
+.text-spacer {
+  height: 8px;
+}
+
+.center-aligned {
+  text-align: center;
+}

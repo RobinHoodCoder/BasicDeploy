@@ -1,0 +1,113 @@
+
+#font {
+  .headerMargins(@font-size) {
+    margin: 0 0 (@font-size * 0.05) 0;
+    font-size: @font-size;
+  }
+  .paragraphMargins(@font-size) {
+    margin: 0 0 (@font-size * 0.8) 0;
+    font-size: @font-size;
+  }
+}
+article p{
+  font-family: @contentFontFamily;
+}
+body{
+  line-height: @baseLine;
+  font-size: @baseFontSize;
+  font-family: @baseFontFamily;
+  color: @baseFontColor;
+}
+a{
+  color: @mainColor;
+}
+h1{
+  font-weight: 500;
+  text-transform: uppercase;
+  #font > .headerMargins(3em);
+  color: @mainColor;
+}
+.intro-article{
+  h2{
+    #font > .headerMargins(2em);
+    color: @mainColor;
+    font-weight: 500;
+    text-transform: none;
+  }
+}
+h1{
+  font-weight: 500;
+  text-transform: uppercase;
+  #font > .headerMargins(3em);
+  color: #fff;
+}
+h2{
+  text-transform: uppercase;
+  #font > .headerMargins(2.6em);
+  color: #fff;
+  font-weight: 500;
+}
+h3{
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  #font.headerMargins(1.8em);
+}
+h4{
+  #font > .headerMargins(1.7em);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.top-headings{
+  h3,.h3{
+    color: @mainColor;
+    #font.headerMargins(2em);
+    text-transform: none;
+
+  }
+}
+.text-page-sheet{
+  p{
+    margin: 0.5em 0 1em;
+  }
+  h1{
+
+  }
+  h2{
+    color: @mainColor;
+    #font.headerMargins(2em);
+    text-transform: none;
+
+  }
+  h3{
+    text-transform: none;
+  }
+}
+
+
+
+
+//Uitzonderingen voor andere headings
+.checklist-container{
+  margin-bottom: 20px;
+
+  ul{
+    margin:0;
+    padding-left: 0;
+    li{
+      line-height: 220%;
+      font-size: 1.1em;
+      list-style-type: none;
+      margin:0;
+      padding:0;
+      font-family: @contentFontFamily;
+      &:before{
+        font-family: "Font Awesome 5 Pro Regular", Sans-serif;
+        content: '\f00c';
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.step-card h3{ color: @mainColor}
+

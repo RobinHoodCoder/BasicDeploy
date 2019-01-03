@@ -1,0 +1,302 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .device {
+
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .device {
+
+  }
+  .portfolio-item .title{
+    width: 55%;
+  }
+  .device {
+    position: static;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .device {
+    position: static;
+  }
+
+  .portfolio-item .title{
+    width: 55%;
+  }
+}
+@media (min-width: 1200px) {
+
+
+
+}
+@media (min-width: 2000px) {
+  .device {
+    position: relative;
+
+  }
+  .retina{
+    height: 550px;
+
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+
+@media (max-width: 1200px) {
+  .wrapper {
+    width: calc(~'100% - 30px');
+  }
+
+  .intro-logo {
+    .transform(translateY(-100%));
+  }
+
+  .intro-article {
+    width: 100%;
+  }
+
+  @mainSpacing: 30px;
+  aside .aside-content {
+    padding: @mainSpacing @mainSpacing 0 @mainSpacing;
+  }
+
+  aside .sheet-label .sidebar-cta {
+    padding: 20px @mainSpacing 20px;
+  }
+
+  .sheet-padder {
+    padding: @mainSpacing 0;
+    width: calc(~'100% - 30px');
+    margin: 0 auto;
+
+    &.second {
+      padding: 0 0 @mainSpacing;
+    }
+  }
+
+  .swiper-slide {
+    &.newwaay {
+      // position: relative;
+      .wrapper {
+
+      }
+
+      .swipe-img-container {
+        padding-top: 67%;
+        position: relative;
+      }
+      .swiper-img.imgtag{
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        display:block;
+        margin:auto;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    #font > .headerMargins(2.4em);
+  }
+
+  h2 {
+    #font > .headerMargins(1.8em);
+  }
+
+  h3, .top-headings h3 {
+    #font.headerMargins(1.6em);
+  }
+  .portfolio-items{
+    h1{
+      #font > .headerMargins(2em);
+    }
+    h2{
+      #font > .headerMargins(1.6em);
+      text-transform: none;
+    }
+    button.portfolio{
+      .btn();
+
+    }
+  }
+
+  .content-header {
+    margin-top: 0;
+  }
+  .portfolio-navigation{
+    bottom: -20px;
+  }
+
+  .logo {
+    right: auto;
+  }
+
+  .point-bar {
+    display: none;
+  }
+
+  .quote-bar {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+  }
+
+  @mainSpacing: 25px;
+  .sheet-padder {
+    padding: @mainSpacing 0;
+    &.second {
+      padding: 0 0 @mainSpacing 0;
+    }
+  }
+
+  .point-bar li {
+    font-size: 1.5em;
+  }
+
+  .align-marger {
+    margin-bottom: @mainSpacing;
+  }
+  .swiper-container .swiper-img{
+    height: 480px;
+  }
+  .top-sheet{
+
+  }
+  .btn.round-outline{
+    font-size: 1.2em;
+    padding: 15px 20px;
+
+  }
+
+}
+
+@media (max-width: 960px) and (min-width: 768px) {
+
+  .sub-portfolio .subGalleryCard article {
+    padding: 30px 0 70px;
+    text-align: center;
+  }
+
+  .portfolio-item{
+    .btn{
+      display: none;
+    }
+
+  }
+
+  .divided-cta-btn {
+    display: none;
+  }
+  .title{
+    width: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+  .referenties-home{
+    img{
+      max-height: 30px;
+    }
+  }
+  aside{
+    top:-20px;
+  }
+
+}
+@media (max-width: 575px) {
+  .mobile-check{
+    position: relative;
+  }
+  .divided-cta-btn{
+    font-size: 1.56em;
+    .btn-mid{
+      line-height: 1.8em;
+      width: 30px;
+      height: 30px;
+    }
+    i{
+      font-size: 0.8em;
+    }
+
+
+  }
+  .btn.round-outline{
+    font-size: 1.1em;
+    padding: 15px 20px;
+
+  }
+  .portfolio-item-title {
+    h1{
+      #font .headerMargins(1.8em);
+
+    }
+    h2{
+      #font .headerMargins(1.4em);
+
+    }
+
+    .title{
+      max-width: 50%;
+    }
+  }
+  .logo {
+    left: 0;
+  }
+
+
+
+  .swiper-container .swiper-img {
+    height: 550px;
+    width: 100%;
+  }
+  .swiper-slide{
+    .swiper-sheet{
+      padding: 25px 0 10px 0;
+    }
+    .btn{
+      display: block;
+      float:none;
+      margin-top:20px;
+    }
+  }
+
+  .mobile-marger-bottom {
+    margin-bottom: 50px;
+  }
+
+  .mobile-centered {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    .profile-image {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 420px) {
+
+  .divided-cta-btn{
+    i{
+      font-size: 1em;
+    }
+  }
+  .divided-cta-btn .btn-left, .divided-cta-btn .btn-right{
+    float:none;
+    width: 100%;
+  }
+
+}
+
