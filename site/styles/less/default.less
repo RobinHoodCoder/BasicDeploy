@@ -1,18 +1,21 @@
 body {
   background: @bodyBackground;
   min-width: 326px;
-  margin: 0;
+
+  margin: 20px;
   padding: 0;
   position: relative;
   &.overlay {
-
   }
 }
-
+.divider{
+  height:2px;
+  background: @grayLight;
+  margin: 40px 0;
+}
 .left-floated {
   float: left;
 }
-
 .align-marger {
   margin-bottom: 50px;
 }
@@ -30,6 +33,7 @@ a:hover {
   margin: 0;
   grid-column-gap: 0 !important;
 }
+
 
 .right-floated {
   float: right;
@@ -50,7 +54,6 @@ a:hover {
     text-decoration: none;
   }
 }
-
 .cleared {
   clear: both;
 }

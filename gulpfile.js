@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     livereload = require('gulp-livereload'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
 minifyCss = require('gulp-minify-css'),
     // autoprefixer does not work with less, use alternate less plugins
     autoprefixer = require('gulp-autoprefixer'),
@@ -11,12 +11,18 @@ minifyCss = require('gulp-minify-css'),
     // babel requires babel-preset-es2015 npm package
     babel = require('gulp-babel'),
     del = require('del'),
-    zip = require('gulp-zip');
-
+    zip = require('gulp-zip'),
+    emit = require('emit')
 
 //less plugins
 var less = require('gulp-less'),
     LessAutoprefix = require('less-plugin-autoprefix');
+
+var mainBowerFiles = require('main-bower-files');
+var filter = require('filter');
+
+var sort = require('gulp-sort');
+
 
 var lessAutoprefix = new LessAutoprefix({
     browsers: ['last 2 versions']
@@ -36,9 +42,15 @@ var imagemin = require('gulp-imagemin'),
 // File paths
 var DIST_PATH = './site/dist';
 var SCRIPTS_PATH = './site/js/**/*.js';
+var VENDPATH = './site/components/**/*.js';
+
+
 // var CSS_PATH = 'site/styles/**/*.css';
 var TEMPLATES_PATH = './templates/**/*.hbs';
 var IMAGES_PATH = './site/images/**/*.{png,jpeg,jpg,svg,gif}';
+
+
+
 //
 // CSS Styles
 /*gulp.task('styles', function () {
@@ -85,19 +97,23 @@ gulp.task('styles', function () {
         .pipe(plumber(function (err) {
             console.log('Styles Task Error');
             console.log(err);
-            this.emit('end');
+            // this.emit('end');
         }))
         .pipe(sourcemaps.init())
         .pipe(less({
             plugins: [lessAutoprefix]
         }))
-        .pipe(minifyCss())
+        // .pipe(minifyCss())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(DIST_PATH))
         .pipe(livereload());
 });
 
 // Scripts
+
+
+
+
 gulp.task('scripts', function () {
     console.log('starting scripts task');
 
@@ -115,6 +131,22 @@ gulp.task('scripts', function () {
         .pipe(concat('scripts.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(DIST_PATH))
+        .pipe(livereload());
+});
+
+gulp.task('vendscripts', function () {
+    console.log('starting vendscripts task');
+
+    return gulp.src(mainBowerFiles(['**/*.js']), { base: VENDPATH })
+        .pipe(sort())
+        .pipe(plumber(function (err) {
+            console.log('Scripts Task Error');
+            console.log(err);
+            this.emit('end');
+        }))
+        .pipe(concat('vends.js'))
+        .pipe(gulp.dest(DIST_PATH))
+        .pipe(sourcemaps.write())
         .pipe(livereload());
 });
 
@@ -179,7 +211,7 @@ gulp.task('templates', function () {
 
 // Default
 // Second argument (the array []) runs declared scripts first
-gulp.task('default', ['clean', 'images', 'templates', 'styles', 'scripts', 'watch'], function () {
+gulp.task('default', ['clean', 'images', 'templates', 'styles', 'scripts', 'vendscripts', 'watch'], function () {
     console.log('starting default task');
 });
 
@@ -196,6 +228,7 @@ gulp.task('watch', function () {
     require('./server.js');
     livereload.listen();
     gulp.watch(SCRIPTS_PATH, ['scripts']);
+    gulp.watch(VENDPATH, ['vendscripts']);
     // gulp.watch(CSS_PATH, ['styles']);
     // gulp.watch('site/scss/**/*.scss', ['styles']);
     gulp.watch('site/styles/less/**/*.less', ['styles']);

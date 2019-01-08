@@ -1,6 +1,6 @@
 $(function() {
-
     // run test on initial page load
+
 
     $('.swiper-container').each(function(){
 
@@ -8,10 +8,8 @@ $(function() {
             // console.log('lazy slider');
             var $currSwiper =  new Swiper($(this),{
                 navigation: {
-
                     noSwiping: true,
                     noSwipingClass: 'swipe-this'
-
                 },
                 // Disable preloading of all images
                 preloadImages: false,

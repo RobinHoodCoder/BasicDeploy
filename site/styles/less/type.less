@@ -1,12 +1,18 @@
 
 #font {
+
   .headerMargins(@font-size) {
-    margin: 0 0 (@font-size * 0.05) 0;
+    margin: 0 0 (@font-size * 0.08) 0;
     font-size: @font-size;
+    line-height: 130%;
+
+
   }
   .paragraphMargins(@font-size) {
     margin: 0 0 (@font-size * 0.8) 0;
     font-size: @font-size;
+
+
   }
 }
 article p{
@@ -26,15 +32,11 @@ h1{
   text-transform: uppercase;
   #font > .headerMargins(3em);
   color: @mainColor;
-}
-.intro-article{
-  h2{
-    #font > .headerMargins(2em);
-    color: @mainColor;
-    font-weight: 500;
-    text-transform: none;
+  &.top-level{
+    #font > .headerMargins(4em);
   }
 }
+
 h1{
   font-weight: 500;
   text-transform: uppercase;
@@ -43,7 +45,7 @@ h1{
 }
 h2{
   text-transform: uppercase;
-  #font > .headerMargins(2.6em);
+  #font > .headerMargins(2em);
   color: #fff;
   font-weight: 500;
 }
